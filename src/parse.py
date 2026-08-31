@@ -116,13 +116,13 @@ def extract_games(html: str) -> List[dict]:
     soup = BeautifulSoup(html, "html.parser")
     entries: List[dict] = []
 
-    for schedule_block in soup.select(".schedule_contents"):
-        heading = schedule_block.select_one(".schedule_date_heading")
+    for date_block in soup.select(".schedule_date_contents"):
+        heading = date_block.find_previous(class_="schedule_date_heading")
         date_text = normalize_text(heading.get_text(" ", strip=True)) if heading else ""
         if not date_text:
             continue
 
-        for event in schedule_block.select(".event_container"):
+        for event in date_block.select(".event_container"):
             parts = [normalize_text(p) for p in event.get_text("|", strip=True).split("|") if normalize_text(p)]
             if len(parts) < 4:
                 continue
@@ -134,7 +134,7 @@ def extract_games(html: str) -> List[dict]:
 
             if len(parts) >= 5 and "conference" in parts[3].lower():
                 location = parts[-1]
-            elif len(parts) >= 5 and "conference" not in parts[3].lower() and "bothell" not in parts[3].lower():
+            elif len(parts) >= 5 and "conference" not in parts[3].lower():
                 location = parts[-1]
 
             if "bothell" not in away_team.lower() and "bothell" not in home_team.lower():
