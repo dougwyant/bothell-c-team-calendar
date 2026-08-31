@@ -35,7 +35,7 @@ python src/build_ics.py --input output/raw_schedule.html --output output/bothell
 3. Paste the published ICS URL, for example:
 
 ```text
-https://YOUR_USERNAME.github.io/bothell-c-team-calendar/bothell-c-team.ics
+https://dougwyant.github.io/bothell-c-team-calendar/bothell-c-team-v2.ics
 ```
 
 4. Click "Add calendar".

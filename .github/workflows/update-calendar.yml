@@ -27,6 +27,9 @@ jobs:
       - name: Build ICS
         run: python src/build_ics.py --input output/raw_schedule.html --output output/bothell-c-team.ics
 
+      - name: Publish fresh calendar URL
+        run: cp output/bothell-c-team.ics output/bothell-c-team-v2.ics
+
       - name: Publish calendar output
         uses: actions/upload-pages-artifact@v3
         with:
