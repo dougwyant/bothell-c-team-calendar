@@ -1,5 +1,7 @@
 # Bothell HS C-Team Calendar Feed
 
+[![Deploy status](https://github.com/dougwyant/bothell-c-team-calendar/actions/workflows/update-calendar.yml/badge.svg)](https://github.com/dougwyant/bothell-c-team-calendar/actions/workflows/update-calendar.yml)
+
 This project generates a Google Calendar-compatible ICS feed for Bothell High School C-Team games from the KingCo athletics schedule.
 
 ## Goals
