@@ -3,9 +3,10 @@ from __future__ import annotations
 import argparse
 import re
 import sys
-from datetime import timedelta
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Iterable
+from zoneinfo import ZoneInfo
 
 from icalendar import Calendar, Event
 
@@ -26,12 +27,14 @@ def build_ics(events: Iterable[dict]) -> str:
     calendar.add("prodid", "-//Bothell C-Team Calendar//EN")
     calendar.add("version", "2.0")
     calendar.add("calscale", "GREGORIAN")
+    local_timezone = ZoneInfo("America/Los_Angeles")
 
     for index, event in enumerate(events):
-        start = parse_game_datetime(event.get("date", ""), event.get("time", ""))
-        if start is None:
+        local_start = parse_game_datetime(event.get("date", ""), event.get("time", ""))
+        if local_start is None:
             continue
 
+        start = local_start.replace(tzinfo=local_timezone).astimezone(timezone.utc)
         summary = f"{event.get('away_team', 'Bothell')} @ {event.get('home_team', 'Opponent')}"
         away = slugify(event.get("away_team", "bothell"))
         home = slugify(event.get("home_team", "opponent"))
@@ -41,7 +44,7 @@ def build_ics(events: Iterable[dict]) -> str:
 
         cal_event = Event()
         cal_event.add("uid", uid)
-        cal_event.add("dtstamp", start)
+        cal_event.add("dtstamp", datetime.now(timezone.utc))
         cal_event.add("dtstart", start)
         cal_event.add("dtend", end)
         cal_event.add("summary", summary)
