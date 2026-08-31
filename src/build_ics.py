@@ -33,7 +33,10 @@ def build_ics(events: Iterable[dict]) -> str:
             continue
 
         summary = f"{event.get('away_team', 'Bothell')} @ {event.get('home_team', 'Opponent')}"
-        uid = f"{start.strftime('%Y%m%d')}-{slugify(event.get('away_team', 'bothell'))}-{slugify(event.get('home_team', 'opponent'))}"
+        away = slugify(event.get("away_team", "bothell"))
+        home = slugify(event.get("home_team", "opponent"))
+        location = slugify(event.get("location", "bothell-hs"))
+        uid = f"{away}-{home}-{location}@bothell-c-team-calendar"
         end = start + timedelta(hours=2)
 
         cal_event = Event()

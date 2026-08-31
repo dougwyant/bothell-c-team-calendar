@@ -7,7 +7,7 @@ SUMMARY:Issaquah @ Bothell
 DTSTART:20260909T190000
 DTEND:20260909T210000
 DTSTAMP:20260909T190000Z
-UID:20260909-issaquah-bothell
+UID:issaquah-bothell-bothell-hs@bothell-c-team-calendar
 LOCATION:Bothell HS
 END:VEVENT
 BEGIN:VEVENT
@@ -15,7 +15,7 @@ SUMMARY:Cedarcrest @ Bothell
 DTSTART:20260914T190000
 DTEND:20260914T210000
 DTSTAMP:20260914T190000Z
-UID:20260914-cedarcrest-bothell
+UID:cedarcrest-bothell-bothell-hs@bothell-c-team-calendar
 LOCATION:Bothell HS
 END:VEVENT
 BEGIN:VEVENT
@@ -23,7 +23,7 @@ SUMMARY:Bothell @ Mercer Island
 DTSTART:20260916T170000
 DTEND:20260916T190000
 DTSTAMP:20260916T170000Z
-UID:20260916-bothell-mercer-island
+UID:bothell-mercer-island-mercer-island-hs@bothell-c-team-calendar
 LOCATION:Mercer Island HS
 END:VEVENT
 BEGIN:VEVENT
@@ -31,7 +31,7 @@ SUMMARY:Hazen @ Bothell
 DTSTART:20260921T190000
 DTEND:20260921T210000
 DTSTAMP:20260921T190000Z
-UID:20260921-hazen-bothell
+UID:hazen-bothell-bothell-hs@bothell-c-team-calendar
 LOCATION:Bothell HS
 END:VEVENT
 BEGIN:VEVENT
@@ -39,7 +39,7 @@ SUMMARY:Bothell @ Mount Si
 DTSTART:20260922T180000
 DTEND:20260922T200000
 DTSTAMP:20260922T180000Z
-UID:20260922-bothell-mount-si
+UID:bothell-mount-si-mount-si-hs@bothell-c-team-calendar
 LOCATION:Mount Si HS
 END:VEVENT
 BEGIN:VEVENT
@@ -47,7 +47,7 @@ SUMMARY:Bothell @ Eastlake
 DTSTART:20260928T161500
 DTEND:20260928T181500
 DTSTAMP:20260928T161500Z
-UID:20260928-bothell-eastlake
+UID:bothell-eastlake-eastlake-hs@bothell-c-team-calendar
 LOCATION:Eastlake HS
 END:VEVENT
 BEGIN:VEVENT
@@ -55,7 +55,7 @@ SUMMARY:Bothell @ Skyline
 DTSTART:20260930T190000
 DTEND:20260930T210000
 DTSTAMP:20260930T190000Z
-UID:20260930-bothell-skyline
+UID:bothell-skyline-skyline-hs@bothell-c-team-calendar
 LOCATION:Skyline HS
 END:VEVENT
 BEGIN:VEVENT
@@ -63,7 +63,7 @@ SUMMARY:Bothell @ Liberty (Renton)
 DTSTART:20261006T190000
 DTEND:20261006T210000
 DTSTAMP:20261006T190000Z
-UID:20261006-bothell-liberty-renton
+UID:bothell-liberty-renton-liberty-hs@bothell-c-team-calendar
 LOCATION:Liberty HS
 END:VEVENT
 BEGIN:VEVENT
@@ -71,7 +71,7 @@ SUMMARY:Juanita @ Bothell
 DTSTART:20261007T190000
 DTEND:20261007T210000
 DTSTAMP:20261007T190000Z
-UID:20261007-juanita-bothell
+UID:juanita-bothell-bothell-hs@bothell-c-team-calendar
 LOCATION:Bothell HS
 END:VEVENT
 BEGIN:VEVENT
@@ -79,7 +79,7 @@ SUMMARY:Bothell @ Bellevue
 DTSTART:20261012T173000
 DTEND:20261012T193000
 DTSTAMP:20261012T173000Z
-UID:20261012-bothell-bellevue
+UID:bothell-bellevue-chinook-middle-schoo@bothell-c-team-calendar
 LOCATION:Chinook Middle Schoo
 END:VEVENT
 BEGIN:VEVENT
@@ -87,7 +87,7 @@ SUMMARY:Lake Washington @ Bothell
 DTSTART:20261014T190000
 DTEND:20261014T210000
 DTSTAMP:20261014T190000Z
-UID:20261014-lake-washington-bothell
+UID:lake-washington-bothell-bothell-hs@bothell-c-team-calendar
 LOCATION:Bothell HS
 END:VEVENT
 BEGIN:VEVENT
@@ -95,7 +95,7 @@ SUMMARY:Bothell @ Redmond
 DTSTART:20261017T110000
 DTEND:20261017T130000
 DTSTAMP:20261017T110000Z
-UID:20261017-bothell-redmond
+UID:bothell-redmond-redmond-hs@bothell-c-team-calendar
 LOCATION:Redmond HS
 END:VEVENT
 BEGIN:VEVENT
@@ -103,7 +103,7 @@ SUMMARY:Woodinville @ Bothell
 DTSTART:20261021T190000
 DTEND:20261021T210000
 DTSTAMP:20261021T190000Z
-UID:20261021-woodinville-bothell
+UID:woodinville-bothell-bothell-hs@bothell-c-team-calendar
 LOCATION:Bothell HS
 END:VEVENT
 END:VCALENDAR
