@@ -2,7 +2,7 @@
 
 [![Deploy status](https://github.com/dougwyant/bothell-c-team-calendar/actions/workflows/update-calendar.yml/badge.svg)](https://github.com/dougwyant/bothell-c-team-calendar/actions/workflows/update-calendar.yml)
 
-This project generates Google Calendar-compatible ICS feeds for Bothell High School C-Team and JV soccer games from the KingCo athletics schedule.
+This project generates Google Calendar-compatible ICS feeds for Bothell High School C-Team and JV soccer games from the KingCo athletics schedule. Event titles are prefixed with `BHS JVC` and `BHS JV`, respectively.
 
 ## Goals
 

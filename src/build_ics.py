@@ -22,7 +22,11 @@ def slugify(value: str) -> str:
     return value or "event"
 
 
-def build_ics(events: Iterable[dict], calendar_id: str = "bothell-c-team") -> str:
+def build_ics(
+    events: Iterable[dict],
+    calendar_id: str = "bothell-c-team",
+    event_prefix: str = "",
+) -> str:
     calendar = Calendar()
     calendar.add("prodid", f"-//Bothell {calendar_id.removeprefix('bothell-').replace('-', ' ').title()} Calendar//EN")
     calendar.add("version", "2.0")
@@ -35,7 +39,8 @@ def build_ics(events: Iterable[dict], calendar_id: str = "bothell-c-team") -> st
             continue
 
         start = local_start.replace(tzinfo=local_timezone).astimezone(timezone.utc)
-        summary = f"{event.get('away_team', 'Bothell')} @ {event.get('home_team', 'Opponent')}"
+        matchup = f"{event.get('away_team', 'Bothell')} @ {event.get('home_team', 'Opponent')}"
+        summary = f"{event_prefix} {matchup}".strip()
         away = slugify(event.get("away_team", "bothell"))
         home = slugify(event.get("home_team", "opponent"))
         location = slugify(event.get("location", "bothell-hs"))
@@ -59,6 +64,7 @@ def main() -> int:
     parser.add_argument("--input", default="output/raw_schedule.html", help="HTML file with schedule rows")
     parser.add_argument("--output", default="output/bothell-c-team.ics", help="Generated ICS file")
     parser.add_argument("--calendar-id", default="bothell-c-team", help="Stable calendar identifier for UIDs")
+    parser.add_argument("--event-prefix", default="", help="Prefix added to each event summary")
     args = parser.parse_args()
 
     raw_path = Path(args.input)
@@ -71,7 +77,10 @@ def main() -> int:
     html = raw_path.read_text(encoding="utf-8")
     games = extract_games(html)
     filtered = [game for game in games if "bothell" in " | ".join([game.get("away_team", ""), game.get("home_team", "")]).lower()]
-    output_path.write_text(build_ics(filtered, args.calendar_id), encoding="utf-8")
+    output_path.write_text(
+        build_ics(filtered, args.calendar_id, args.event_prefix),
+        encoding="utf-8",
+    )
     print(f"Wrote {len(filtered)} Bothell events to {output_path}")
     return 0
 

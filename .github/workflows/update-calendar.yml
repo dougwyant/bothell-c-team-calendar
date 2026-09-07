@@ -25,10 +25,10 @@ jobs:
         run: python src/scrape.py
 
       - name: Build ICS
-        run: python src/build_ics.py --input output/raw_schedule.html --output output/bothell-c-team.ics
+        run: python src/build_ics.py --input output/raw_schedule.html --output output/bothell-c-team.ics --event-prefix "BHS JVC"
 
       - name: Build JV ICS
-        run: python src/build_ics.py --input output/raw_jv_schedule.html --output output/bothell-jv-team.ics --calendar-id bothell-jv-team
+        run: python src/build_ics.py --input output/raw_jv_schedule.html --output output/bothell-jv-team.ics --calendar-id bothell-jv-team --event-prefix "BHS JV"
 
       - name: Publish fresh C-Team calendar URL
         run: cp output/bothell-c-team.ics output/bothell-c-team-v2.ics
