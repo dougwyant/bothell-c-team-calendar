@@ -36,13 +36,13 @@ python src/build_ics.py --input output/raw_jv_schedule.html --output output/both
 3. Paste the published ICS URL, for example:
 
 ```text
-https://dougwyant.github.io/bothell-c-team-calendar/bothell-c-team-v2.ics
+https://dougwyant.github.io/bothell-c-team-calendar/bothell-c-team-v3.ics
 ```
 
 For the JV team, use:
 
 ```text
-https://dougwyant.github.io/bothell-c-team-calendar/bothell-jv-team-v2.ics
+https://dougwyant.github.io/bothell-c-team-calendar/bothell-jv-team-v3.ics
 ```
 
 4. Click "Add calendar".

@@ -44,7 +44,7 @@ def build_ics(
         away = slugify(event.get("away_team", "bothell"))
         home = slugify(event.get("home_team", "opponent"))
         location = slugify(event.get("location", "bothell-hs"))
-        uid = f"{away}-{home}-{location}@{calendar_id}-calendar"
+        uid = f"{away}-{home}-{location}@{calendar_id}-calendar-v3"
         end = start + timedelta(hours=2)
 
         cal_event = Event()

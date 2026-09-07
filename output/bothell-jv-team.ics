@@ -6,8 +6,8 @@ BEGIN:VEVENT
 SUMMARY:BHS JV Roosevelt @ Bothell
 DTSTART:20260910T020000Z
 DTEND:20260910T040000Z
-DTSTAMP:20260907T213424Z
-UID:roosevelt-bothell-bothell-hs@bothell-jv-team-calendar
+DTSTAMP:20260907T213840Z
+UID:roosevelt-bothell-bothell-hs@bothell-jv-team-calendar-v3
 LOCATION:Bothell HS
 END:VEVENT
 END:VCALENDAR
