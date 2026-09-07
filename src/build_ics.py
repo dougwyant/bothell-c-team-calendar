@@ -22,9 +22,9 @@ def slugify(value: str) -> str:
     return value or "event"
 
 
-def build_ics(events: Iterable[dict]) -> str:
+def build_ics(events: Iterable[dict], calendar_id: str = "bothell-c-team") -> str:
     calendar = Calendar()
-    calendar.add("prodid", "-//Bothell C-Team Calendar//EN")
+    calendar.add("prodid", f"-//Bothell {calendar_id.removeprefix('bothell-').replace('-', ' ').title()} Calendar//EN")
     calendar.add("version", "2.0")
     calendar.add("calscale", "GREGORIAN")
     local_timezone = ZoneInfo("America/Los_Angeles")
@@ -39,7 +39,7 @@ def build_ics(events: Iterable[dict]) -> str:
         away = slugify(event.get("away_team", "bothell"))
         home = slugify(event.get("home_team", "opponent"))
         location = slugify(event.get("location", "bothell-hs"))
-        uid = f"{away}-{home}-{location}@bothell-c-team-calendar"
+        uid = f"{away}-{home}-{location}@{calendar_id}-calendar"
         end = start + timedelta(hours=2)
 
         cal_event = Event()
@@ -58,6 +58,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Build an ICS file from Bothell schedule rows.")
     parser.add_argument("--input", default="output/raw_schedule.html", help="HTML file with schedule rows")
     parser.add_argument("--output", default="output/bothell-c-team.ics", help="Generated ICS file")
+    parser.add_argument("--calendar-id", default="bothell-c-team", help="Stable calendar identifier for UIDs")
     args = parser.parse_args()
 
     raw_path = Path(args.input)
@@ -70,7 +71,7 @@ def main() -> int:
     html = raw_path.read_text(encoding="utf-8")
     games = extract_games(html)
     filtered = [game for game in games if "bothell" in " | ".join([game.get("away_team", ""), game.get("home_team", "")]).lower()]
-    output_path.write_text(build_ics(filtered), encoding="utf-8")
+    output_path.write_text(build_ics(filtered, args.calendar_id), encoding="utf-8")
     print(f"Wrote {len(filtered)} Bothell events to {output_path}")
     return 0
 

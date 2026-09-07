@@ -1,15 +1,15 @@
-# Bothell HS C-Team Calendar Feed
+# Bothell HS Soccer Calendar Feeds
 
 [![Deploy status](https://github.com/dougwyant/bothell-c-team-calendar/actions/workflows/update-calendar.yml/badge.svg)](https://github.com/dougwyant/bothell-c-team-calendar/actions/workflows/update-calendar.yml)
 
-This project generates a Google Calendar-compatible ICS feed for Bothell High School C-Team games from the KingCo athletics schedule.
+This project generates Google Calendar-compatible ICS feeds for Bothell High School C-Team and JV soccer games from the KingCo athletics schedule.
 
 ## Goals
 
 - Download the schedule widget HTML
 - Parse all games
 - Keep only Bothell games
-- Generate a stable, subscribe-able `bothell-c-team.ics` file
+- Generate stable, subscribe-able `bothell-c-team.ics` and `bothell-jv-team.ics` files
 - Refresh automatically with a GitHub Action
 - Publish the output via GitHub Pages
 
@@ -19,6 +19,7 @@ This project generates a Google Calendar-compatible ICS feed for Bothell High Sc
 python -m pip install -r requirements.txt
 python src/scrape.py
 python src/build_ics.py --input output/raw_schedule.html --output output/bothell-c-team.ics
+python src/build_ics.py --input output/raw_jv_schedule.html --output output/bothell-jv-team.ics --calendar-id bothell-jv-team
 ```
 
 ## GitHub Pages setup
@@ -36,6 +37,12 @@ python src/build_ics.py --input output/raw_schedule.html --output output/bothell
 
 ```text
 https://dougwyant.github.io/bothell-c-team-calendar/bothell-c-team-v2.ics
+```
+
+For the JV team, use:
+
+```text
+https://dougwyant.github.io/bothell-c-team-calendar/bothell-jv-team-v2.ics
 ```
 
 4. Click "Add calendar".
