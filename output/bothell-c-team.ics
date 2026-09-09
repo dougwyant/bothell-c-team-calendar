@@ -2,108 +2,111 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Bothell C Team Calendar//EN
 CALSCALE:GREGORIAN
+X-WR-CALNAME:Bothell C Team
 BEGIN:VEVENT
 SUMMARY:BHS JVC Issaquah @ Bothell
 DTSTART:20260910T020000Z
 DTEND:20260910T040000Z
-DTSTAMP:20260909T222845Z
-UID:issaquah-bothell-bothell-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20260909-issaquah-bothell-bothell-hs@bothell-c-team-calendar-v4
 LOCATION:Bothell HS
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Cedarcrest @ Bothell
 DTSTART:20260915T020000Z
 DTEND:20260915T040000Z
-DTSTAMP:20260909T222845Z
-UID:cedarcrest-bothell-bothell-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20260914-cedarcrest-bothell-bothell-hs@bothell-c-team-calendar-v4
 LOCATION:Bothell HS
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Bothell @ Mercer Island
 DTSTART:20260917T000000Z
 DTEND:20260917T020000Z
-DTSTAMP:20260909T222845Z
-UID:bothell-mercer-island-mercer-island-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20260916-bothell-mercer-island-mercer-island-hs@bothell-c-team-calenda
+ r-v4
 LOCATION:Mercer Island HS
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Hazen @ Bothell
 DTSTART:20260922T020000Z
 DTEND:20260922T040000Z
-DTSTAMP:20260909T222845Z
-UID:hazen-bothell-bothell-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20260921-hazen-bothell-bothell-hs@bothell-c-team-calendar-v4
 LOCATION:Bothell HS
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Bothell @ Mount Si
 DTSTART:20260923T010000Z
 DTEND:20260923T030000Z
-DTSTAMP:20260909T222845Z
-UID:bothell-mount-si-mount-si-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20260922-bothell-mount-si-mount-si-hs@bothell-c-team-calendar-v4
 LOCATION:Mount Si HS
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Bothell @ Eastlake
 DTSTART:20260928T231500Z
 DTEND:20260929T011500Z
-DTSTAMP:20260909T222845Z
-UID:bothell-eastlake-eastlake-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20260928-bothell-eastlake-eastlake-hs@bothell-c-team-calendar-v4
 LOCATION:Eastlake HS
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Bothell @ Skyline
 DTSTART:20261001T020000Z
 DTEND:20261001T040000Z
-DTSTAMP:20260909T222845Z
-UID:bothell-skyline-skyline-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20260930-bothell-skyline-skyline-hs@bothell-c-team-calendar-v4
 LOCATION:Skyline HS
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Bothell @ Liberty (Renton)
 DTSTART:20261007T020000Z
 DTEND:20261007T040000Z
-DTSTAMP:20260909T222845Z
-UID:bothell-liberty-renton-liberty-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20261006-bothell-liberty-renton-liberty-hs@bothell-c-team-calendar-v4
 LOCATION:Liberty HS
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Juanita @ Bothell
 DTSTART:20261008T020000Z
 DTEND:20261008T040000Z
-DTSTAMP:20260909T222845Z
-UID:juanita-bothell-bothell-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20261007-juanita-bothell-bothell-hs@bothell-c-team-calendar-v4
 LOCATION:Bothell HS
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Bothell @ Bellevue
 DTSTART:20261013T003000Z
 DTEND:20261013T023000Z
-DTSTAMP:20260909T222845Z
-UID:bothell-bellevue-international-school@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20261012-bothell-bellevue-international-school@bothell-c-team-calendar
+ -v4
 LOCATION:International School
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Lake Washington @ Bothell
 DTSTART:20261015T020000Z
 DTEND:20261015T040000Z
-DTSTAMP:20260909T222845Z
-UID:lake-washington-bothell-bothell-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20261014-lake-washington-bothell-bothell-hs@bothell-c-team-calendar-v4
 LOCATION:Bothell HS
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Bothell @ Redmond
 DTSTART:20261017T180000Z
 DTEND:20261017T200000Z
-DTSTAMP:20260909T222845Z
-UID:bothell-redmond-redmond-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20261017-bothell-redmond-redmond-hs@bothell-c-team-calendar-v4
 LOCATION:Redmond HS
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:BHS JVC Woodinville @ Bothell
 DTSTART:20261022T020000Z
 DTEND:20261022T040000Z
-DTSTAMP:20260909T222845Z
-UID:woodinville-bothell-bothell-hs@bothell-c-team-calendar-v3
+DTSTAMP:20260909T223441Z
+UID:20261021-woodinville-bothell-bothell-hs@bothell-c-team-calendar-v4
 LOCATION:Bothell HS
 END:VEVENT
 END:VCALENDAR

@@ -31,6 +31,7 @@ def build_ics(
     calendar.add("prodid", f"-//Bothell {calendar_id.removeprefix('bothell-').replace('-', ' ').title()} Calendar//EN")
     calendar.add("version", "2.0")
     calendar.add("calscale", "GREGORIAN")
+    calendar.add("x-wr-calname", calendar_id.replace("-", " ").title())
     local_timezone = ZoneInfo("America/Los_Angeles")
 
     for index, event in enumerate(events):
@@ -44,7 +45,7 @@ def build_ics(
         away = slugify(event.get("away_team", "bothell"))
         home = slugify(event.get("home_team", "opponent"))
         location = slugify(event.get("location", "bothell-hs"))
-        uid = f"{away}-{home}-{location}@{calendar_id}-calendar-v3"
+        uid = f"{local_start:%Y%m%d}-{away}-{home}-{location}@{calendar_id}-calendar-v4"
         end = start + timedelta(hours=2)
 
         cal_event = Event()

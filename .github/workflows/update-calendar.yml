@@ -31,10 +31,10 @@ jobs:
         run: python src/build_ics.py --input output/raw_jv_schedule.html --output output/bothell-jv-team.ics --calendar-id bothell-jv-team --event-prefix "BHS JV"
 
       - name: Publish fresh C-Team calendar URL
-        run: cp output/bothell-c-team.ics output/bothell-c-team-v3.ics
+        run: cp output/bothell-c-team.ics output/bothell-c-team-v4.ics
 
       - name: Publish fresh JV calendar URL
-        run: cp output/bothell-jv-team.ics output/bothell-jv-team-v3.ics
+        run: cp output/bothell-jv-team.ics output/bothell-jv-team-v4.ics
 
       - name: Publish calendar output
         uses: actions/upload-pages-artifact@v3
