@@ -38,7 +38,7 @@ def parse_date_heading(date_text: str, school_year: str = "2026-27") -> Optional
     start_year, end_year = [int(part) for part in school_year.split("-")]
     month_names = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
 
-    for fmt in ("%A, %b %d", "%a, %b %d"):
+    for fmt in ("%A, %b %d", "%a, %b %d", "%a %b %d"):
         try:
             base = datetime.strptime(cleaned, fmt)
             year = start_year if base.month >= 8 else end_year
@@ -115,6 +115,31 @@ def parse_game_row(row) -> Optional[dict]:
 def extract_games(html: str) -> List[dict]:
     soup = BeautifulSoup(html, "html.parser")
     entries: List[dict] = []
+
+    for row in soup.select("table.team_schedule tbody tr"):
+        date_node = row.select_one(".event_date")
+        time_node = row.select_one(".event_time")
+        opponent_node = row.select_one(".event_opponent")
+        home_away_node = row.select_one(".event_ha")
+        location_node = row.select_one(".event_location")
+        if not all([date_node, time_node, opponent_node, home_away_node]):
+            continue
+
+        opponent = normalize_text(opponent_node.get_text(" ", strip=True))
+        home_away = normalize_text(home_away_node.get_text(" ", strip=True)).lower()
+        if not opponent or home_away not in {"home", "away"}:
+            continue
+
+        entries.append({
+            "date": normalize_text(date_node.get_text(" ", strip=True)),
+            "time": normalize_text(time_node.get_text(" ", strip=True)),
+            "away_team": "Bothell" if home_away == "away" else opponent,
+            "home_team": opponent if home_away == "away" else "Bothell",
+            "location": normalize_text(location_node.get_text(" ", strip=True)) if location_node else "Bothell HS",
+        })
+
+    if entries:
+        return entries
 
     for date_block in soup.select(".schedule_date_contents"):
         heading = date_block.find_previous(class_="schedule_date_heading")

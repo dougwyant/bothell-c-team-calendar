@@ -34,6 +34,22 @@ class ParseTestCase(unittest.TestCase):
         self.assertIsNotNone(value)
         self.assertEqual(value.strftime("%Y-%m-%d %H:%M"), "2026-09-01 19:00")
 
+    def test_extract_games_handles_team_schedule_table(self):
+        html = """
+        <table class="team_schedule"><tbody>
+          <tr>
+            <td><div class="event_date">Wed Sep 16</div><div class="event_time">6:30 pm</div></td>
+            <td><div class="event_opponent">Skyline</div></td>
+            <td><div class="event_ha">Home</div><div class="event_location">Bothell HS</div></td>
+          </tr>
+        </tbody></table>
+        """
+        games = extract_games(html)
+        self.assertEqual(len(games), 1)
+        self.assertEqual(games[0]["home_team"], "Bothell")
+        self.assertEqual(games[0]["away_team"], "Skyline")
+        self.assertEqual(parse_game_datetime(games[0]["date"], games[0]["time"]).strftime("%Y-%m-%d"), "2026-09-16")
+
 
 if __name__ == "__main__":
     unittest.main()

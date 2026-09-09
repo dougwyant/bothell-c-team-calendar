@@ -6,12 +6,12 @@ from pathlib import Path
 import requests
 
 DEFAULT_URL = (
-    "https://www.wpanetwork.com/widgets/widget-league-sport-tabs.php"
-    "?sport_id=11&league_id=7&school_year=2026-27&level_id=10&output_mode=plain"
+    "https://www.wpanetwork.com/widgets/widget-team-schedule.php"
+    "?school_year=2026-27&school_id=61&sport_id=11&level_id=10&output_mode=plain"
 )
 JV_URL = (
-    "https://www.wpanetwork.com/widgets/widget-league-sport-tabs.php"
-    "?sport_id=11&league_id=7&school_year=2026-27&level_id=11&output_mode=plain"
+    "https://www.wpanetwork.com/widgets/widget-team-schedule.php"
+    "?school_year=2026-27&school_id=61&sport_id=11&level_id=11&output_mode=plain"
 )
 
 
